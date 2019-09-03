@@ -8,11 +8,16 @@ import { Formik } from "formik";
 
 export default function NoteModal(props) {
   const handleClose = () => {
+    //clear every input before close
     document.getElementById("title").value = "";
     document.getElementById("body").value = "";
+    //call the close func from parent component
     props.close();
   };
+
   const submit = values => {
+    //if it is new note or edit old note
+    //call the relevant func
     props.isNew ? props.addNote(values) : props.editNote(values);
     handleClose();
   };

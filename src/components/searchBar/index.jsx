@@ -3,7 +3,7 @@ import { TitleBar, Toolbar, SearchField } from 'react-desktop/macOs';
 
 export default function SearchBar(props) {
 
-
+    //call the search funcs from parents
     const handleChange  = e => props.search(e.target.value);
     const handleCancel  = () => props.search("");
 
