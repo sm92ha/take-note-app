@@ -1,10 +1,11 @@
 import React from 'react'
 import { TitleBar, Toolbar, SearchField } from 'react-desktop/macOs';
 
-export default function SearchBar() {
+export default function SearchBar(props) {
 
 
-    const handleChange  = e => console.log(e.target.value);
+    const handleChange  = e => props.search(e.target.value);
+    const handleCancel  = () => props.search("");
 
     return (
         <TitleBar inset>
@@ -13,6 +14,7 @@ export default function SearchBar() {
             placeholder="Search"
             defaultValue=""
             onChange={handleChange}
+            onCancel={handleCancel}
           />
           
         </Toolbar>
