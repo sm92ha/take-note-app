@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     minWidth: 650
+  },
+  btn:{
+    marginRight:10
   }
 }));
 
@@ -49,11 +52,11 @@ export default function NoteTable(props) {
                       : row.body}
                   </TableCell>
                   <TableCell align="left">
-                    <Button color="blue" onClick={() => props.edit(row, index)}>
+                    <Button color="blue" onClick={() => props.edit(row, index)} className={classes.btn}>
                       Edit
                     </Button>
                     <Button
-                      color="red"
+                      className={classes.btn}
                       onClick={e => {
                         if (
                           window.confirm(
